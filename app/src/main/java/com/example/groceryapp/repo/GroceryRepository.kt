@@ -1,4 +1,7 @@
-package com.example.groceryapp
+package com.example.groceryapp.repo
+
+import com.example.groceryapp.data.GroceryDatabase
+import com.example.groceryapp.model.GroceryItem
 
 class GroceryRepository(private val db: GroceryDatabase) {
 

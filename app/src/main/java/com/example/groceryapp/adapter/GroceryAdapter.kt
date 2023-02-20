@@ -1,15 +1,16 @@
-package com.example.groceryapp
+package com.example.groceryapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.grocery_rv_item.view.*
+import com.example.groceryapp.R
+import com.example.groceryapp.model.GroceryItem
 
 class GroceryAdapter(var list: List<GroceryItem>, val groceryItemClickInterface: GroceryItemClickInterface) :
     RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder>() {
-
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroceryViewHolder {
@@ -23,13 +24,13 @@ class GroceryAdapter(var list: List<GroceryItem>, val groceryItemClickInterface:
 
     override fun onBindViewHolder(holder: GroceryViewHolder, position: Int) {
         var currentPosition = list[position]
-        holder.itemView.TVItemName.text = currentPosition.itemName
-        holder.itemView.TVItemRate.text = "${currentPosition.itemPrice}"
-        holder.itemView.TVItemQuantity.text = "${currentPosition.itemQuantity}"
+        holder.tvName.text = currentPosition.itemName
+        holder.tvRate.text = "${currentPosition.itemPrice}"
+        holder.tvQuantity.text = "${currentPosition.itemQuantity}"
         val itemTotal = currentPosition.itemPrice * currentPosition.itemQuantity
-        holder.itemView.TVTotalAmt.text = "RS. $itemTotal"
+        holder.tvTotalAmt.text = "EGP $itemTotal"
 
-        holder.itemView.IVDelete.setOnClickListener {
+        holder.ivDelete.setOnClickListener {
             groceryItemClickInterface.onItemClick(currentPosition)
         }
 
@@ -39,5 +40,12 @@ class GroceryAdapter(var list: List<GroceryItem>, val groceryItemClickInterface:
         fun onItemClick(groceryItem: GroceryItem)
     }
 
-    inner class GroceryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class GroceryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val tvName = itemView.findViewById<TextView>(R.id.TVItemName)
+        val tvRate = itemView.findViewById<TextView>(R.id.TVItemRate)
+        val tvQuantity = itemView.findViewById<TextView>(R.id.TVItemQuantity)
+        val tvTotalAmt = itemView.findViewById<TextView>(R.id.TVTotalAmt)
+        val ivDelete = itemView.findViewById<ImageView>(R.id.IVDelete)
+
+    }
 }

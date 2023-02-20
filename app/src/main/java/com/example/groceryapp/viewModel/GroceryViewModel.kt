@@ -1,6 +1,8 @@
-package com.example.groceryapp
+package com.example.groceryapp.viewModel
 
 import androidx.lifecycle.ViewModel
+import com.example.groceryapp.model.GroceryItem
+import com.example.groceryapp.repo.GroceryRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

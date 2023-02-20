@@ -1,7 +1,8 @@
-package com.example.groceryapp
+package com.example.groceryapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.groceryapp.model.GroceryItem
 
 @Dao
 interface GroceryDao {

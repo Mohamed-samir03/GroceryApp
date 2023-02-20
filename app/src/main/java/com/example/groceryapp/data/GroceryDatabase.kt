@@ -1,14 +1,15 @@
-package com.example.groceryapp
+package com.example.groceryapp.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.groceryapp.model.GroceryItem
 
 @Database(entities = [GroceryItem::class], version = 1)
 abstract class GroceryDatabase :RoomDatabase() {
 
-    abstract fun getGroceryDao():GroceryDao
+    abstract fun getGroceryDao(): GroceryDao
 
     companion object {
         @Volatile
