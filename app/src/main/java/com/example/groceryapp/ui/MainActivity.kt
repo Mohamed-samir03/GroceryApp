@@ -13,7 +13,7 @@ import com.example.groceryapp.viewModel.GroceryViewModel
 import com.example.groceryapp.viewModel.GroceryViewModelFactory
 import com.example.groceryapp.R
 import com.example.groceryapp.adapter.GroceryAdapter
-import com.example.groceryapp.data.GroceryDatabase
+import com.example.groceryapp.db.GroceryDatabase
 import com.example.groceryapp.model.GroceryItem
 import com.example.groceryapp.repo.GroceryRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton

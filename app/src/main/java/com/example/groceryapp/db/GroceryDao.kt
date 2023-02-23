@@ -1,4 +1,4 @@
-package com.example.groceryapp.data
+package com.example.groceryapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
